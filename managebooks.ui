@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ManageBooks</class>
+ <widget class="QWidget" name="ManageBooks">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>517</width>
+    <height>374</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="managelbl">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>261</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel#managelbl {
+    color: #1E293B;
+    font-size: 23px;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    padding: 5px;
+}</string>
+   </property>
+   <property name="text">
+    <string>📚Manage Books</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="managedes">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>40</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel#managedes{
+    color: #64748B;
+    font-size: 14px;
+    background-color: transparent;
+    border: none;
+    padding: 3px;
+}</string>
+   </property>
+   <property name="text">
+    <string>Description</string>
+   </property>
+  </widget>
+  <widget class="QFrame" name="manageframe">
+   <property name="geometry">
+    <rect>
+     <x>29</x>
+     <y>99</y>
+     <width>731</width>
+     <height>301</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>700</width>
+     <height>250</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QFrame#manageframe {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 15px;
+    padding: 15px;
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Shape::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Shadow::Raised</enum>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
