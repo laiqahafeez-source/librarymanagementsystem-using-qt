@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>issuebook</class>
+ <widget class="QWidget" name="issuebook">
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>920</width><height>720</height></rect>
+  </property>
+  <property name="windowTitle">
+   <string>Issue Book</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#issuebook { background-color: #f4f6fa; }
+QLabel#TITLE { color: #1f3a5f; }
+QLabel#lblSubtitle { color: #6b7a90; }
+QGroupBox { font-weight: bold; color: #1f3a5f; border: 1px solid #c9d3e0; border-radius: 8px; margin-top: 12px; background: white; }
+QGroupBox::title { subcontrol-origin: margin; left: 12px; padding: 0 6px; }
+QLineEdit, QComboBox, QDateEdit, QSpinBox, QTextEdit { border: 1px solid #b8c4d4; border-radius: 4px; padding: 5px; background: white; }
+QLineEdit:focus, QComboBox:focus, QDateEdit:focus, QTextEdit:focus { border: 1px solid #2f6fdb; }
+QLineEdit:read-only { background: #eef1f6; }
+QPushButton { border: none; border-radius: 5px; padding: 8px 18px; background: #2f6fdb; color: white; font-weight: bold; }
+QPushButton:hover { background: #2458b3; }
+QPushButton#btnClear { background: #7d8a9c; }
+QPushButton#btnClose { background: #d9534f; }
+QPushButton#btnReturnSelected { background: #2e9e5b; }
+QPushButton#btnDelete { background: #d9534f; }
+QTableWidget { background: white; alternate-background-color: #f4f7fb; gridline-color: #dde4ee; }
+QHeaderView::section { background: #1f3a5f; color: white; padding: 6px; border: none; font-weight: bold; }</string>
+  </property>
+  <layout class="QVBoxLayout" name="mainLayout">
+   <property name="leftMargin"><number>20</number></property>
+   <property name="topMargin"><number>14</number></property>
+   <property name="rightMargin"><number>20</number></property>
+   <property name="bottomMargin"><number>14</number></property>
+   <property name="spacing"><number>10</number></property>
+   <item>
+    <widget class="QLabel" name="TITLE">
+     <property name="font">
+      <font><pointsize>26</pointsize><bold>true</bold></font>
+     </property>
+     <property name="text"><string>ISSUE BOOK</string></property>
+     <property name="alignment"><set>Qt::AlignCenter</set></property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="lblSubtitle">
+     <property name="text"><string>Library Management System - Issue a book to a student</string></property>
+     <property name="alignment"><set>Qt::AlignCenter</set></property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="topLayout">
+     <property name="spacing"><number>14</number></property>
+     <item>
+      <widget class="QGroupBox" name="grpStudent">
+       <property name="title"><string>Student Details</string></property>
+       <layout class="QGridLayout" name="gridStudent">
+        <property name="verticalSpacing"><number>12</number></property>
+        <property name="topMargin"><number>22</number></property>
+        <item row="0" column="0">
+         <widget class="QLabel" name="lblstudentid">
+          <property name="text"><string>Student ID</string></property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="txtstudentid">
+          <property name="placeholderText"><string>e.g. 2024-CS-001</string></property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QPushButton" name="btnSearchStudent">
+          <property name="text"><string>Search</string></property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="lblstudentname">
+          <property name="text"><string>Student Name</string></property>
+         </widget>
+        </item>
+        <item row="1" column="1" colspan="2">
+         <widget class="QLineEdit" name="txtstudentname">
+          <property name="placeholderText"><string>Enter student name</string></property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="lbldepartment">
+          <property name="text"><string>Department</string></property>
+         </widget>
+        </item>
+        <item row="2" column="1" colspan="2">
+         <widget class="QComboBox" name="cmbDepartment">
+          <item><property name="text"><string>Computer Science</string></property></item>
+          <item><property name="text"><string>Software Engineering</string></property></item>
+          <item><property name="text"><string>Electrical Engineering</string></property></item>
+          <item><property name="text"><string>Business Administration</string></property></item>
+          <item><property name="text"><string>Mathematics</string></property></item>
+          <item><property name="text"><string>Other</string></property></item>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="lblcontact">
+          <property name="text"><string>Contact No.</string></property>
+         </widget>
+        </item>
+        <item row="3" column="1" colspan="2">
+         <widget class="QLineEdit" name="txtcontact">
+          <property name="placeholderText"><string>03xx-xxxxxxx</string></property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="lblbooksheld">
+          <property name="text"><string>Books Held</string></property>
+         </widget>
+        </item>
+        <item row="4" column="1" colspan="2">
+         <widget class="QSpinBox" name="spinBooksHeld">
+          <property name="readOnly"><bool>true</bool></property>
+          <property name="buttonSymbols"><enum>QAbstractSpinBox::NoButtons</enum></property>
+          <property name="maximum"><number>99</number></property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="grpBook">
+       <property name="title"><string>Book Details</string></property>
+       <layout class="QGridLayout" name="gridBook">
+        <property name="verticalSpacing"><number>12</number></property>
+        <property name="topMargin"><number>22</number></property>
+        <item row="0" column="0">
+         <widget class="QLabel" name="lblbookid">
+          <property name="text"><string>Book ID</string></property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="txtbookid">
+          <property name="placeholderText"><string>e.g. B-1024</string></property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QPushButton" name="btnSearchBook">
+          <property name="text"><string>Search</string></property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="lblbooktitle">
+          <property name="text"><string>Book Title</string></property>
+         </widget>
+        </item>
+        <item row="1" column="1" colspan="2">
+         <widget class="QLineEdit" name="txtbooktitle">
+          <property name="readOnly"><bool>true</bool></property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="lblauthor">
+          <property name="text"><string>Author</string></property>
+         </widget>
+        </item>
+        <item row="2" column="1" colspan="2">
+         <widget class="QLineEdit" name="txtauthor">
+          <property name="readOnly"><bool>true</bool></property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="lblcategory">
+          <property name="text"><string>Category</string></property>
+         </widget>
+        </item>
+        <item row="3" column="1" colspan="2">
+         <widget class="QLineEdit" name="txtcategory">
+          <property name="readOnly"><bool>true</bool></property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="lblavailable">
+          <property name="text"><string>Available Copies</string></property>
+         </widget>
+        </item>
+        <item row="4" column="1" colspan="2">
+         <widget class="QSpinBox" name="spinAvailable">
+          <property name="readOnly"><bool>true</bool></property>
+          <property name="buttonSymbols"><enum>QAbstractSpinBox::NoButtons</enum></property>
+          <property name="maximum"><number>9999</number></property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="grpIssue">
+     <property name="title"><string>Issue Information</string></property>
+     <layout class="QGridLayout" name="gridIssue">
+      <property name="verticalSpacing"><number>10</number></property>
+      <property name="topMargin"><number>22</number></property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="lblissuedate">
+        <property name="text"><string>Issue Date</string></property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QDateEdit" name="dateIssue">
+        <property name="calendarPopup"><bool>true</bool></property>
+        <property name="displayFormat"><string>dd/MM/yyyy</string></property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLabel" name="lblduedate">
+        <property name="text"><string>Due Date</string></property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QDateEdit" name="dateDue">
+        <property name="calendarPopup"><bool>true</bool></property>
+        <property name="displayFormat"><string>dd/MM/yyyy</string></property>
+       </widget>
+      </item>
+      <item row="0" column="4">
+       <widget class="QLabel" name="lblfine">
+        <property name="text"><string>Fine / Day (Rs.)</string></property>
+       </widget>
+      </item>
+      <item row="0" column="5">
+       <widget class="QSpinBox" name="spinFine">
+        <property name="maximum"><number>10000</number></property>
+        <property name="value"><number>10</number></property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="lblremarks">
+        <property name="text"><string>Remarks</string></property>
+       </widget>
+      </item>
+      <item row="1" column="1" colspan="5">
+       <widget class="QLineEdit" name="txtRemarks">
+        <property name="placeholderText"><string>Optional notes (condition of book, etc.)</string></property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="buttonLayout">
+     <item>
+      <spacer name="spacerLeft">
+       <property name="orientation"><enum>Qt::Horizontal</enum></property>
+       <property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnIssue">
+       <property name="text"><string>Issue Book</string></property>
+       <property name="default"><bool>true</bool></property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnClear">
+       <property name="text"><string>Clear</string></property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnClose">
+       <property name="text"><string>Close</string></property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="grpRecords">
+     <property name="title"><string>Issued Books Record</string></property>
+     <layout class="QVBoxLayout" name="recordsLayout">
+      <property name="topMargin"><number>22</number></property>
+      <item>
+       <layout class="QHBoxLayout" name="searchLayout">
+        <item>
+         <widget class="QLineEdit" name="txtSearchRecords">
+          <property name="placeholderText"><string>Search by student ID, name or book ID...</string></property>
+          <property name="clearButtonEnabled"><bool>true</bool></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnReturnSelected">
+          <property name="text"><string>Mark Returned</string></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnDelete">
+          <property name="text"><string>Delete</string></property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QTableWidget" name="tableIssued">
+        <property name="alternatingRowColors"><bool>true</bool></property>
+        <property name="editTriggers"><set>QAbstractItemView::NoEditTriggers</set></property>
+        <property name="selectionBehavior"><enum>QAbstractItemView::SelectRows</enum></property>
+        <property name="selectionMode"><enum>QAbstractItemView::SingleSelection</enum></property>
+        <attribute name="horizontalHeaderStretchLastSection"><bool>true</bool></attribute>
+        <attribute name="verticalHeaderVisible"><bool>false</bool></attribute>
+        <column><property name="text"><string>Student ID</string></property></column>
+        <column><property name="text"><string>Student Name</string></property></column>
+        <column><property name="text"><string>Book ID</string></property></column>
+        <column><property name="text"><string>Book Title</string></property></column>
+        <column><property name="text"><string>Issue Date</string></property></column>
+        <column><property name="text"><string>Due Date</string></property></column>
+        <column><property name="text"><string>Status</string></property></column>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>txtstudentid</tabstop>
+  <tabstop>btnSearchStudent</tabstop>
+  <tabstop>txtstudentname</tabstop>
+  <tabstop>cmbDepartment</tabstop>
+  <tabstop>txtcontact</tabstop>
+  <tabstop>txtbookid</tabstop>
+  <tabstop>btnSearchBook</tabstop>
+  <tabstop>dateIssue</tabstop>
+  <tabstop>dateDue</tabstop>
+  <tabstop>spinFine</tabstop>
+  <tabstop>txtRemarks</tabstop>
+  <tabstop>btnIssue</tabstop>
+  <tabstop>btnClear</tabstop>
+  <tabstop>btnClose</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btnClose</sender>
+   <signal>clicked()</signal>
+   <receiver>issuebook</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel"><x>860</x><y>420</y></hint>
+    <hint type="destinationlabel"><x>460</x><y>360</y></hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
