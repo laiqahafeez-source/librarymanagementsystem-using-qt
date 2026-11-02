@@ -12,6 +12,8 @@ qt_add_executable(DSAlibrarymanagement
     mainwindow.h
     mainwindow.ui
     managebooks.h managebooks.cpp managebooks.ui
+    issuebook.h issuebook.cpp issuebook.ui
+    seachbook.h seachbook.cpp seachbook.ui
 )
 
 target_link_libraries(DSAlibrarymanagement
